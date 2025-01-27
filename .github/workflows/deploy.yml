@@ -26,4 +26,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
-          aws s3 sync ./ s3://m3-static-website-bucket --delete --exclude "*" --include "*.html"
+          aws s3 sync ./ s3://m3-static-website-bucket --delete --exclude "*" --include "*.html" --exclude "*.git/*" --exclude "*.aws/*" --exact-timestamps
